@@ -21,7 +21,8 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; overflow-x: clip; }
+/* hidden primeiro para celulares antigos que não entendem clip */
+html { scroll-behavior: smooth; overflow-x: hidden; overflow-x: clip; }
 
 /* Ao clicar no menu, a seção para logo abaixo do topo fixo */
 section[id] { scroll-margin-top: var(--altura-topo); }
@@ -432,6 +433,14 @@ a:hover > .icone-seta { transform: translateX(3px); }
 .rostos img + img { margin-left: -12px; }
 
 /* ===== Faixa de serviços passando ===== */
+/* A faixa é inclinada e mais larga que a tela; a moldura corta o que sobra nas laterais
+   (sem ela a página deslizava para o lado no celular). O padding dá espaço para as pontas inclinadas */
+.faixa-moldura {
+  overflow: hidden;
+  padding-block: 1rem;
+  margin-block: -1rem;
+}
+
 .faixa {
   overflow: hidden;
   width: 104vw;
