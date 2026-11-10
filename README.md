@@ -1,5 +1,5 @@
 # Salz-Barber-Shop
-Portfólio da Salz Barber Shop (Juninho, Giovani e Gabriel), em São Joaquim da Barra - SP.
+Portfólio da Salz Barber Shop (Juninho, Giovanni e Gabriel), em São Joaquim da Barra - SP.
 
 Site estático em HTML, CSS e JavaScript, feito a partir da base do site da Alves BarberShop.
 
@@ -7,7 +7,7 @@ Site estático em HTML, CSS e JavaScript, feito a partir da base do site da Alve
 - **Início**: foto da equipe ao fundo, agendamento, WhatsApp, aviso "Aberto agora" e números da casa
 - **01 Equipe**: carrossel com os três barbeiros, especialidades e Instagram de cada um
 - **02 Serviços**: serviços em abas (Corte & barba, Combos, Extras) e os planos de assinatura
-- **03 Espaço**: faixa de fotos da barbearia e da loja (produtos originais da NBA)
+- **03 Espaço**: faixa de fotos da barbearia e da loja (produtos originais Ogochi, Aeropostale, Polo, NBA e NFL)
 - **Avaliações**: nota 5.0 e comentários do AppBarber
 - **04 Visite**: mapa com rotas (Google Maps e Waze), horários e contatos
 

@@ -20,7 +20,7 @@ document.querySelectorAll(".faixa-trilho, .galeria-trilho, .depoimentos-trilho")
   });
 });
 
-// ===== Carrossel da equipe (Juninho, Giovani, Gabriel) =====
+// ===== Carrossel da equipe (Juninho, Giovanni, Gabriel) =====
 const carrossel = document.querySelector("[data-carrossel]");
 
 if (carrossel) {
