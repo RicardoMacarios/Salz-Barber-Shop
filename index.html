@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salz Barber Shop | Barbearia em São Joaquim da Barra - SP</title>
+  <meta name="description" content="Salz Barber Shop: a primeira barbearia por assinatura de São Joaquim da Barra - SP. Corte e barba com Juninho, Giovani e Gabriel. Agende seu horário.">
+  <meta name="theme-color" content="#0B0D0D">
+
+  <!-- Ícone da aba do navegador e da tela inicial do celular -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/logo/favicon-192.png">
+  <link rel="apple-touch-icon" href="img/logo/favicon-192.png">
+
+  <!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook) -->
+  <!-- TROCAR: quando o site tiver endereço (ex.: Vercel), colocar canonical, og:url e og:image com o link completo -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Salz Barber Shop">
+  <meta property="og:title" content="Salz Barber Shop | Seu estilo no padrão Salz">
+  <meta property="og:description" content="A primeira barbearia por assinatura de São Joaquim da Barra - SP. Corte e barba com Juninho, Giovani e Gabriel.">
+  <meta property="og:image" content="img/compartilhar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Entrada animada só na primeira visita da sessão (e nunca para quem prefere menos movimento) -->
+  <script>
+    try {
+      if (sessionStorage.getItem("salz-entrou") || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("sem-entrada");
+      }
+      sessionStorage.setItem("salz-entrou", "1");
+    } catch (erro) {}
+  </script>
+
+  <!-- Dados da barbearia para o Google (endereço, horários, telefone e nota) -->
+  <!-- TROCAR: quando o site tiver endereço, colocar "url" e o link completo em "image" e "logo" -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarberShop",
+    "name": "Salz Barber Shop",
+    "description": "A primeira barbearia por assinatura de São Joaquim da Barra - SP. Corte, barba e loja de roupas masculinas com produtos originais da NBA.",
+    "image": "img/equipe/equipe-salz.jpg",
+    "logo": "img/logo/salz-logo.png",
+    "telephone": "+55 16 99208-8977",
+    "priceRange": "R$ 10 - R$ 100",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua São Paulo, 2235 - Lapa",
+      "addressLocality": "São Joaquim da Barra",
+      "addressRegion": "SP",
+      "postalCode": "14600-108",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -20.58584976,
+      "longitude": -47.86786652
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Monday",
+        "opens": "10:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Monday",
+        "opens": "13:30",
+        "closes": "18:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Tuesday",
+        "opens": "09:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Tuesday",
+        "opens": "13:30",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Wednesday",
+        "opens": "09:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Wednesday",
+        "opens": "13:30",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Thursday",
+        "opens": "09:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Thursday",
+        "opens": "13:30",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "08:30",
+        "closes": "11:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Friday",
+        "opens": "13:30",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "11:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "13:00",
+        "closes": "16:30"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "30",
+      "bestRating": "5"
+    },
+    "sameAs": [
+      "https://www.instagram.com/salzbarbershop/",
+      "https://sites.appbarber.com.br/salzbarbershop-ovbx"
+    ]
+  }
+  </script>
+
+  <!-- Estatísticas de visitas da Vercel (só funciona depois de publicado e com Analytics ligado no painel da Vercel) -->
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+  <div class="entrada" aria-hidden="true"><img src="img/logo/salz-logo.png" alt="" width="104" height="104"></div>
+
+  <header class="topo">
+    <a href="#inicio" class="marca">
+      <img src="img/logo/salz-logo.png" alt="" width="42" height="42">
+      <span class="marca-nome">Salz<small>Barber Shop</small></span>
+    </a>
+    <nav id="menu" class="menu">
+      <a href="#equipe"><span class="menu-num" aria-hidden="true">01</span>Equipe<svg class="menu-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#servicos"><span class="menu-num" aria-hidden="true">02</span>Serviços<svg class="menu-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#espaco"><span class="menu-num" aria-hidden="true">03</span>Espaço<svg class="menu-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#visite"><span class="menu-num" aria-hidden="true">04</span>Visite<svg class="menu-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+
+      <!-- Pé do menu (só no celular): agendar, contatos e se está aberto agora -->
+      <div class="menu-rodape">
+        <p class="status" data-status hidden></p>
+        <a class="botao" href="https://sites.appbarber.com.br/salzbarbershop-ovbx" target="_blank" rel="noopener">
+          Agendar meu horário
+          <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <div class="menu-redes">
+          <a class="contato-link" href="https://wa.me/5516992088977" target="_blank" rel="noopener">
+            <span class="contato-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"/><path d="M9.2 8.3c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .5-.1.6l-.5.6c-.1.1-.1.3 0 .5.5.9 1.3 1.7 2.3 2.2.2.1.4.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.5.7c.2.1.3.3.3.5v.4c0 .4-.2.7-.5.9-.6.4-1.4.5-2.1.3-2.3-.7-4.1-2.5-4.8-4.8-.2-.7-.1-1.5.3-2.1z" fill="currentColor" stroke="none"/></svg></span>
+            <span><small>WhatsApp</small>(16) 99208-8977</span>
+          </a>
+          <a class="contato-link" href="https://www.instagram.com/salzbarbershop/" target="_blank" rel="noopener">
+            <span class="contato-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg></span>
+            <span><small>Instagram</small>@salzbarbershop</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <a class="botao botao-pequeno" href="https://sites.appbarber.com.br/salzbarbershop-ovbx" target="_blank" rel="noopener">Agendar</a>
+    <button class="menu-botao" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- INÍCIO -->
+    <section id="inicio" class="inicio">
+      <div class="hero-fundo">
+        <img src="img/equipe/equipe-salz.jpg" alt="Giovani, Juninho e Gabriel, os barbeiros da Salz Barber Shop, lado a lado na barbearia" width="1206" height="1267" fetchpriority="high">
+      </div>
+      <div class="hero">
+        <div class="hero-texto">
+          <p class="sobretitulo">Barbearia em São Joaquim da Barra</p>
+          <h1>
+            <span class="linha"><span>Seu estilo</span></span>
+            <span class="linha"><span>no <em>padrão</em></span></span>
+            <span class="linha"><span><em>Salz.</em></span></span>
+          </h1>
+          <p class="hero-descricao">Corte, barba e acabamento caprichado com o Juninho, o Giovani e o Gabriel. O tradicional, atualizado.</p>
+          <div class="acoes">
+            <a class="botao" href="https://sites.appbarber.com.br/salzbarbershop-ovbx" target="_blank" rel="noopener">
+              Agendar meu horário
+              <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="botao botao-contorno" href="https://wa.me/5516992088977?text=Ol%C3%A1%21%20Conheci%20a%20Salz%20Barber%20Shop%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener">
+              <svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 8.3c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .5-.1.6l-.5.6c-.1.1-.1.3 0 .5.5.9 1.3 1.7 2.3 2.2.2.1.4.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.5.7c.2.1.3.3.3.5v.4c0 .4-.2.7-.5.9-.6.4-1.4.5-2.1.3-2.3-.7-4.1-2.5-4.8-4.8-.2-.7-.1-1.5.3-2.1z" fill="currentColor"/></svg>
+              WhatsApp
+            </a>
+          </div>
+          <p class="status selo-status" data-status hidden></p>
+        </div>
+
+        <ul class="numeros">
+          <li><strong>5.0 <span class="estrela" aria-hidden="true">★</span></strong>nota no AppBarber</li>
+          <li><strong>1ª</strong>barbearia por assinatura da cidade</li>
+          <li>
+            <strong>3
+              <span class="rostos" aria-hidden="true">
+                <img src="img/equipe/rosto-juninho.jpg" alt="" width="362" height="452">
+                <img src="img/equipe/rosto-giovani.jpg" alt="" width="310" height="388">
+                <img src="img/equipe/rosto-gabriel.jpg" alt="" width="350" height="438">
+              </span>
+            </strong>barbeiros, um só padrão
+          </li>
+          <li><strong>+7 anos</strong>no mercado</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Faixa com os serviços passando (o script duplica os itens para a volta sem emenda) -->
+    <div class="faixa" aria-hidden="true">
+      <div class="faixa-trilho">
+        <span>Corte</span><span>Barba</span><span>Sobrancelha na navalha</span><span>Hidratação</span><span>Pezinho</span><span>Corte pai e filho</span><span>Assinatura mensal</span><span>Produtos originais NBA</span>
+      </div>
+    </div>
+
+    <!-- 01 EQUIPE: carrossel, um barbeiro por vez (arrasta para o lado ou usa as setas) -->
+    <section id="equipe" class="secao">
+      <div class="secao-topo">
+        <div>
+          <p class="rotulo"><span>01</span> Equipe</p>
+          <h2>Conheça os <em>barbeiros.</em></h2>
+          <p class="secao-intro">Cada um com seu estilo, todos com o mesmo cuidado. Arraste para o lado e escolha o seu.</p>
+        </div>
+        <div class="carrossel-controles">
+          <button class="seta" type="button" data-anterior aria-label="Barbeiro anterior">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+          </button>
+          <button class="seta" type="button" data-proximo aria-label="Próximo barbeiro">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="carrossel" data-carrossel>
+        <div class="carrossel-nomes" aria-label="Escolha o barbeiro">
+          <button type="button" data-ir="0" aria-current="true">Juninho</button>
+          <button type="button" data-ir="1">Giovani</button>
+          <button type="button" data-ir="2">Gabriel</button>
+        </div>
+
+        <div class="carrossel-trilho" tabindex="0" aria-label="Barbeiros da Salz">
+          <!-- CONFIRMAR: textos e especialidades são sugestões; ajustar com cada barbeiro -->
+          <article class="barbeiro" data-nome="Juninho" aria-label="1 de 3: Juninho">
+            <div class="barbeiro-foto">
+              <img src="img/equipe/juninho.jpg" alt="Juninho, barbeiro da Salz Barber Shop, sorrindo de camisa social escura e calça clara" width="425" height="1207" loading="lazy">
+            </div>
+            <div class="barbeiro-texto">
+              <p class="barbeiro-cargo">Barbeiro</p>
+              <h3>Juninho</h3>
+              <p>Do degradê ao acabamento na navalha, cuida de cada detalhe para o corte sair do jeito que você pediu.</p>
+              <div class="especialidades">
+                <p class="especialidades-titulo">Especialidades</p>
+                <ul>
+                  <li><span class="especialidade-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M6 12h12M9 18h6"/></svg></span>Degradê</li>
+                  <li><span class="especialidade-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20l10-10 3 3-10 7H3zM13 10l4-4a2.1 2.1 0 0 1 3 3l-4 4"/></svg></span>Acabamento na navalha</li>
+                  <li><span class="especialidade-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 11.5c-1.6-2.2-4.3-2.6-6.3-1.4-.9.6-1.7 1.9-2.9 1.6 1.1 2.6 4.2 3.6 6.3 2.5 1.3-.7 2.3-1.6 2.9-2.7zm0 0c1.6-2.2 4.3-2.6 6.3-1.4.9.6 1.7 1.9 2.9 1.6-1.1 2.6-4.2 3.6-6.3 2.5-1.3-.7-2.3-1.6-2.9-2.7z"/></svg></span>Barba</li>
+                </ul>
+              </div>
+              <div class="barbeiro-acoes">
+                <a class="botao" href="https://sites.appbarber.com.br/salzbarbershop-ovbx" target="_blank" rel="noopener">
+                  Agendar com Juninho
+                  <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a class="barbeiro-insta" href="https://www.instagram.com/juninhoalvesbarber/" target="_blank" rel="noopener" aria-label="Instagram do Juninho"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>@juninhoalvesbarber</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="barbeiro" data-nome="Giovani" aria-label="2 de 3: Giovani">
+            <div class="barbeiro-foto">
+              <img src="img/equipe/giovani.jpg" alt="Giovani, barbeiro da Salz Barber Shop, de camisa polo e calça pretas" width="440" height="1207" loading="lazy">
+            </div>
+            <div class="barbeiro-texto">
+              <p class="barbeiro-cargo">Barbeiro</p>
+              <h3>Giovani</h3>
+              <p>Cortes modernos e texturizados, para quem quer mudar o visual ou manter o estilo sempre alinhado.</p>
+              <div class="especialidades">
+                <p class="especialidades-titulo">Especialidades</p>
+                <ul>
+                  <li><span class="especialidade-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></svg></span>Cortes modernos</li>
+                  <li><span class="especialidade-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg></span>Sobrancelha na navalha</li>
+                  <li><span class="especialidade-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span>Hidratação</li>
+                </ul>
+              </div>
+              <div class="barbeiro-acoes">
+                <a class="botao" href="https://sites.appbarber.com.br/salzbarbershop-ovbx" target="_blank" rel="noopener">
+                  Agendar com Giovani
+                  <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a class="barbeiro-insta" href="https://www.instagram.com/giovannidomingos_/" target="_blank" rel="noopener" aria-label="Instagram do Giovani"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>@giovannidomingos_</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="barbeiro" data-nome="Gabriel" aria-label="3 de 3: Gabriel">
+            <div class="barbeiro-foto">
+              <img src="img/equipe/gabriel.jpg" alt="Gabriel, barbeiro da Salz Barber Shop, sorrindo de camiseta e calça pretas" width="506" height="1207" loading="lazy">
+            </div>
+            <div class="barbeiro-texto">
+              <p class="barbeiro-cargo">Barbeiro</p>
+              <h3>Gabriel</h3>
+              <p>Barba desenhada e corte social bem alinhado. Também atende os pequenos, no combo de corte pai e filho.</p>
+              <div class="especialidades">
+                <p class="especialidades-titulo">Especialidades</p>
+                <ul>
+                  <li><span class="especialidade-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 11.5c-1.6-2.2-4.3-2.6-6.3-1.4-.9.6-1.7 1.9-2.9 1.6 1.1 2.6 4.2 3.6 6.3 2.5 1.3-.7 2.3-1.6 2.9-2.7zm0 0c1.6-2.2 4.3-2.6 6.3-1.4.9.6 1.7 1.9 2.9 1.6-1.1 2.6-4.2 3.6-6.3 2.5-1.3-.7-2.3-1.6-2.9-2.7z"/></svg></span>Barba</li>
+                  <li><span class="especialidade-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></span>Corte social</li>
+                  <li><span class="especialidade-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg></span>Corte infantil</li>
+                </ul>
+              </div>
+              <div class="barbeiro-acoes">
+                <a class="botao" href="https://sites.appbarber.com.br/salzbarbershop-ovbx" target="_blank" rel="noopener">
+                  Agendar com Gabriel
+                  <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a class="barbeiro-insta" href="https://www.instagram.com/gabriel1oficial/" target="_blank" rel="noopener" aria-label="Instagram do Gabriel"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>@gabriel1oficial</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 SERVIÇOS E ASSINATURA (valores copiados do AppBarber em 09/11/2026) -->
+    <section id="servicos" class="secao">
+      <p class="rotulo"><span>02</span> Serviços</p>
+      <h2>Serviços e <em>assinatura.</em></h2>
+      <p class="secao-intro">Escolha a categoria e veja os valores. Os serviços marcados com <strong>No plano</strong> entram na assinatura.</p>
+
+      <div class="servicos-grade">
+        <div>
+          <div class="servicos-abas" role="group" aria-label="Categorias de serviços" hidden>
+            <button type="button" data-filtro="principal" aria-pressed="true">Corte &amp; barba</button>
+            <button type="button" data-filtro="combos" aria-pressed="false">Combos</button>
+            <button type="button" data-filtro="extras" aria-pressed="false">Extras</button>
+          </div>
+          <ul class="lista-servicos">
+            <li class="servico" data-categoria="principal">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></span>
+                <span class="tag-plano">No plano</span>
+              </span>
+              <span class="servico-nome">Corte</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+              <span class="servico-preco">R$ 45</span>
+            </li>
+            <li class="servico" data-categoria="principal">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 11.5c-1.6-2.2-4.3-2.6-6.3-1.4-.9.6-1.7 1.9-2.9 1.6 1.1 2.6 4.2 3.6 6.3 2.5 1.3-.7 2.3-1.6 2.9-2.7zm0 0c1.6-2.2 4.3-2.6 6.3-1.4.9.6 1.7 1.9 2.9 1.6-1.1 2.6-4.2 3.6-6.3 2.5-1.3-.7-2.3-1.6-2.9-2.7z"/></svg></span>
+                <span class="tag-plano">No plano</span>
+              </span>
+              <span class="servico-nome">Barbear</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+              <span class="servico-preco">R$ 35</span>
+            </li>
+            <li class="servico" data-categoria="principal">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></svg></span>
+                <span class="tag-plano">No plano</span>
+              </span>
+              <span class="servico-nome">Corte + barbear</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+              <span class="servico-preco">R$ 80</span>
+            </li>
+            <li class="servico" data-categoria="principal">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17.5" cy="10" r="2.2"/><path d="M15.5 20a4.5 4.5 0 0 1 6-4.2"/></svg></span>
+                
+              </span>
+              <span class="servico-nome">Corte pai e filho</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>60 min</span>
+              <span class="servico-preco"><small>a partir de</small>R$ 80</span>
+            </li>
+            <li class="servico" data-categoria="combos">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></svg></span>
+                
+              </span>
+              <span class="servico-nome">Corte + sobrancelha na navalha</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+              <span class="servico-preco"><small>a partir de</small>R$ 55</span>
+            </li>
+            <li class="servico" data-categoria="combos">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></svg></span>
+                
+              </span>
+              <span class="servico-nome">Corte + hidratação capilar</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+              <span class="servico-preco">R$ 60</span>
+            </li>
+            <li class="servico" data-categoria="combos">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></svg></span>
+                
+              </span>
+              <span class="servico-nome">Corte + barbear + sobrancelha</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+              <span class="servico-preco">R$ 85</span>
+            </li>
+            <li class="servico" data-categoria="combos">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></svg></span>
+                
+              </span>
+              <span class="servico-nome">Corte + barbear + hidratação</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>60 min</span>
+              <span class="servico-preco">R$ 95</span>
+            </li>
+            <li class="servico" data-categoria="combos">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></svg></span>
+                
+              </span>
+              <span class="servico-nome">Completo: corte, barba, sobrancelha e hidratação</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>60 min</span>
+              <span class="servico-preco"><small>a partir de</small>R$ 100</span>
+            </li>
+            <li class="servico" data-categoria="combos">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 11.5c-1.6-2.2-4.3-2.6-6.3-1.4-.9.6-1.7 1.9-2.9 1.6 1.1 2.6 4.2 3.6 6.3 2.5 1.3-.7 2.3-1.6 2.9-2.7zm0 0c1.6-2.2 4.3-2.6 6.3-1.4.9.6 1.7 1.9 2.9 1.6-1.1 2.6-4.2 3.6-6.3 2.5-1.3-.7-2.3-1.6-2.9-2.7z"/></svg></span>
+                
+              </span>
+              <span class="servico-nome">Barbear + pezinho</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+              <span class="servico-preco">R$ 45</span>
+            </li>
+            <li class="servico" data-categoria="extras">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20l10-10 3 3-10 7H3zM13 10l4-4a2.1 2.1 0 0 1 3 3l-4 4"/></svg></span>
+                <span class="tag-plano">No plano</span>
+              </span>
+              <span class="servico-nome">Pezinho</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+              <span class="servico-preco">R$ 10</span>
+            </li>
+            <li class="servico" data-categoria="extras">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg></span>
+                
+              </span>
+              <span class="servico-nome">Sobrancelha na navalha</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+              <span class="servico-preco">R$ 10</span>
+            </li>
+            <li class="servico" data-categoria="extras">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span>
+                
+              </span>
+              <span class="servico-nome">Hidratação</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+              <span class="servico-preco">R$ 15</span>
+            </li>
+            <li class="servico" data-categoria="extras">
+              <span class="servico-topo">
+                <span class="servico-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></svg></span>
+                
+              </span>
+              <span class="servico-nome">Depilação de nariz</span>
+              <span class="servico-tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>30 min</span>
+              <span class="servico-preco">R$ 15</span>
+            </li>
+          </ul>
+          <a class="link-seta" href="https://sites.appbarber.com.br/salzbarbershop-ovbx" target="_blank" rel="noopener">
+            Ver todos os serviços no AppBarber
+            <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="servicos-lado">
+          <div class="assinatura">
+            <p class="assinatura-selo">A 1ª da cidade</p>
+            <h3>Assinatura Salz</h3>
+            <p>Pague uma vez por mês e corte quantas vezes quiser. Planos do AppBarber:</p>
+            <!-- Valores do AppBarber em 10/11/2026; se mudarem lá, atualizar aqui -->
+            <ul class="planos">
+              <li><span>Corte ilimitado</span><strong>R$ 99,90<small>/mês</small></strong></li>
+              <li><span>Barba ilimitada</span><strong>R$ 106,90<small>/mês</small></strong></li>
+              <li class="plano-destaque"><span>Corte e barba ilimitados</span><strong>R$ 159,90<small>/mês</small></strong></li>
+            </ul>
+            <a class="botao botao-escuro" href="https://sites.appbarber.com.br/salzbarbershop-ovbx" target="_blank" rel="noopener">
+              Assinar agora
+              <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <img class="assinatura-logo" src="img/logo/salz-logo.png" alt="" width="200" height="200" loading="lazy">
+          </div>
+
+          <div class="comodidades">
+            <h3>Comodidades</h3>
+            <ul>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor"/></svg>Wi-Fi</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3h13l-1.6 17.1a1.5 1.5 0 0 1-1.5 1.4H8.6a1.5 1.5 0 0 1-1.5-1.4zM6.2 9h11.6"/></svg>Bebidas</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10.5" r="3.4"/><path d="M10.9 9.6h2.2M10.9 11.4h2.2"/></svg>Sinuca</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.5" r="1.8"/><path d="M5 8.5l7 1.5 7-1.5M12 10v4l-3 6M12 14l3 6"/></svg>Acessibilidade</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg>Atende crianças</li>
+            </ul>
+            <p>Pagamento no Pix, em dinheiro, cartão de crédito ou débito.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRABALHOS: entra aqui quando chegarem as fotos de img/cortes/ (galeria com filtro por barbeiro) -->
+
+    <!-- 03 ESPAÇO: fotos do carrossel do Instagram (post da Salz com @midiaemfoco.br) -->
+    <section id="espaco" class="secao">
+      <p class="rotulo"><span>03</span> Espaço</p>
+      <h2>Conheça o <em>espaço.</em></h2>
+      <p class="secao-intro">Barbearia e loja de roupas masculinas no mesmo lugar, com <strong>produtos originais da NBA</strong>. Fica na Rua São Paulo, 2235.</p>
+
+      <!-- O script duplica as fotos para a faixa passar sem emenda -->
+      <div class="galeria">
+        <div class="galeria-trilho">
+          <img src="img/espaco/01-fachada.jpg" alt="Fachada da Salz Barber & Shop, com o letreiro verde-água na parede de tijolos" width="720" height="960" loading="lazy">
+          <img src="img/espaco/15-sinuca.jpg" alt="Cliente jogando sinuca no espaço da Salz Barber Shop" width="720" height="960" loading="lazy">
+          <img src="img/espaco/02-corte-na-maquina.jpg" alt="Barbeiro da Salz ajustando a máquina antes do corte" width="720" height="960" loading="lazy">
+          <img src="img/espaco/04-loja-camisetas.jpg" alt="Arara de camisetas coloridas na loja da Salz" width="720" height="960" loading="lazy">
+          <img src="img/espaco/03-degrade-na-nuca.jpg" alt="Degradê sendo feito na nuca com a máquina" width="720" height="960" loading="lazy">
+          <img src="img/espaco/05-corte-na-tesoura.jpg" alt="Barbeiro cortando o cabelo do cliente na tesoura" width="720" height="960" loading="lazy">
+          <img src="img/espaco/14-loja-nba.jpg" alt="Camisetas originais da NBA à venda na loja da Salz" width="720" height="960" loading="lazy">
+          <img src="img/espaco/06-finalizacao-secador.jpg" alt="Finalização do corte com secador e pente" width="720" height="960" loading="lazy">
+          <img src="img/espaco/16-lavatorio.jpg" alt="Barbeiro lavando o cabelo do cliente no lavatório da Salz" width="720" height="960" loading="lazy">
+          <img src="img/espaco/07-loja-camisetas-brasil.jpg" alt="Camisetas do Brasil, branca e amarela, à venda na loja" width="720" height="960" loading="lazy">
+          <img src="img/espaco/08-barba-na-maquina.jpg" alt="Cliente fazendo a barba na máquina" width="720" height="960" loading="lazy">
+          <img src="img/espaco/09-acabamento-tesoura-pente.jpg" alt="Acabamento do degradê com tesoura e pente" width="720" height="960" loading="lazy">
+          <img src="img/espaco/10-loja-bermudas.jpg" alt="Bermudas coloridas penduradas na loja" width="720" height="960" loading="lazy">
+          <img src="img/espaco/11-barbeiro-trabalhando.jpg" alt="Barbeiro preparando a máquina no balcão" width="720" height="960" loading="lazy">
+          <img src="img/espaco/12-pente-e-maquina.jpg" alt="Corte com pente e máquina" width="720" height="960" loading="lazy">
+          <img src="img/espaco/13-tesoura-e-pente.jpg" alt="Corte na tesoura com pente" width="720" height="960" loading="lazy">
+        </div>
+      </div>
+
+      <div class="galeria-acoes">
+        <p class="destaque-loja">
+          <img class="destaque-loja-foto" src="img/espaco/14-loja-nba.jpg" alt="" width="720" height="960" loading="lazy">
+          <span class="destaque-loja-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 3 4 6v4h3v11h10V10h3V6l-4-3a4 4 0 0 1-8 0z"/></svg></span>
+          <span><small class="destaque-loja-selo">Loja Salz</small><strong><span class="so-celular">Loja com p</span><span class="so-pc">P</span>rodutos originais da NBA</strong>Camisetas e roupas masculinas para sair da barbearia no estilo.</span>
+        </p>
+        <a class="botao botao-contorno" href="https://www.instagram.com/salzbarbershop/" target="_blank" rel="noopener">
+          <svg class="icone-instagram" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
+          Ver mais no Instagram
+        </a>
+      </div>
+    </section>
+
+    <!-- AVALIAÇÕES: nota e comentários reais do AppBarber (30 avaliações, todas 5 estrelas, em 10/11/2026) -->
+    <section class="avaliacoes" aria-label="Avaliações dos clientes">
+      <div class="avaliacoes-conteudo">
+        <div class="nota">
+          <strong>5.0</strong>
+          <div>
+            <span class="estrelas" aria-hidden="true">★★★★★</span>
+            <p>30 avaliações no AppBarber, <br class="so-pc">todas com 5 estrelas.</p>
+          </div>
+        </div>
+        <!-- Todas as avaliações do AppBarber passando (o script duplica para a volta sem emenda) -->
+        <div class="depoimentos">
+          <div class="depoimentos-trilho">
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Miguel Z.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Alexandre L.</strong></figcaption>
+            </figure>
+            <figure class="depoimento com-texto">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <blockquote>“Excelente Profissional!... Deixa meu esposo e filhos no estilo!”</blockquote>
+              <figcaption><strong>Nádia O.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Matheus M.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Vitor M.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Rangel C.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Cláudio</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Andre</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Danilo E.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Jorge S.</strong></figcaption>
+            </figure>
+            <figure class="depoimento com-texto">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <blockquote>“Profissional diferenciado!!!”</blockquote>
+              <figcaption><strong>Ismael S.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Filipe S.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Jordan F.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Jose D.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Henrique B.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Pedro C.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Luis S.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Matheus F.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Rodolfo G.</strong></figcaption>
+            </figure>
+            <figure class="depoimento com-texto">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <blockquote>“Excelente profissional”</blockquote>
+              <figcaption><strong>Alisson C.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Heitor C.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Junior M.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Cássio C.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Diego G.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Davi C.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>João S.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Felipe T.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Gustavo S.</strong></figcaption>
+            </figure>
+            <figure class="depoimento">
+              <span class="estrelas-peq" aria-label="5 estrelas">★★★★★</span>
+              <p class="sem-texto">Avaliou com 5 estrelas</p>
+              <figcaption><strong>Alexander B.</strong></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 VISITE -->
+    <section id="visite" class="secao">
+      <p class="rotulo"><span>04</span> Visite</p>
+      <h2>Passa aqui na <em>Salz.</em></h2>
+      <p class="secao-intro">Na Lapa, em São Joaquim da Barra. Agende pelo AppBarber ou chame no WhatsApp.</p>
+
+      <div class="visite-grade">
+        <!-- Mapa grande com o endereço e as rotas por cima -->
+        <div class="mapa-bloco">
+          <iframe class="mapa" title="Mapa com a localização da Salz Barber Shop" src="https://www.google.com/maps?q=-20.58584976,-47.86786652&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="endereco-cartao">
+            <span class="endereco-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+            <div>
+              <h3>Rua São Paulo, 2235</h3>
+              <p>Lapa · São Joaquim da Barra - SP · <span class="sem-quebra">CEP 14600-108</span></p>
+            </div>
+            <div class="rotas">
+              <a class="botao rota" href="https://www.google.com/maps/dir/?api=1&amp;destination=-20.58584976%2C-47.86786652" target="_blank" rel="noopener">Como chegar <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+              <a class="botao botao-contorno rota" href="https://waze.com/ul?ll=-20.58584976%2C-47.86786652&amp;navigate=yes" target="_blank" rel="noopener">Waze</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="visite-lado">
+          <div class="cartao">
+            <div class="horarios-topo">
+              <h3>Horários</h3>
+              <p class="status" data-status hidden></p>
+            </div>
+            <!-- Horários do AppBarber; se mudarem, atualizar aqui e na lista "horarios" do script.js -->
+            <ul class="horarios">
+              <li data-dias="1"><span class="dia">Segunda</span><span class="turnos"><span>10h – 12h</span><span>13h30 – 18h30</span></span></li>
+              <li data-dias="2 3 4"><span class="dia">Terça a quinta</span><span class="turnos"><span>9h – 12h</span><span>13h30 – 20h</span></span></li>
+              <li data-dias="5"><span class="dia">Sexta</span><span class="turnos"><span>8h30 – 11h30</span><span>13h30 – 20h</span></span></li>
+              <li data-dias="6"><span class="dia">Sábado</span><span class="turnos"><span>8h – 11h</span><span>13h – 16h30</span></span></li>
+              <li data-dias="0" class="dia-fechado"><span class="dia">Domingo</span><span class="turnos"><span>Fechado</span></span></li>
+            </ul>
+          </div>
+
+          <!-- WhatsApp e Instagram em botões grandes -->
+          <div class="contato-tiles">
+            <a class="tile tile-whats" href="https://wa.me/5516992088977" target="_blank" rel="noopener">
+              <span class="tile-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"/><path d="M9.2 8.3c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .5-.1.6l-.5.6c-.1.1-.1.3 0 .5.5.9 1.3 1.7 2.3 2.2.2.1.4.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.5.7c.2.1.3.3.3.5v.4c0 .4-.2.7-.5.9-.6.4-1.4.5-2.1.3-2.3-.7-4.1-2.5-4.8-4.8-.2-.7-.1-1.5.3-2.1z" fill="currentColor" stroke="none"/></svg></span>
+              <span><small>WhatsApp</small>(16) 99208-8977</span>
+              <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="tile tile-insta" href="https://www.instagram.com/salzbarbershop/" target="_blank" rel="noopener">
+              <span class="tile-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg></span>
+              <span><small>Instagram</small>@salzbarbershop</span>
+              <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chamada final -->
+      <div class="chamada">
+        <div class="chamada-texto">
+          <span class="rostos" aria-hidden="true">
+            <img src="img/equipe/rosto-juninho.jpg" alt="" width="362" height="452" loading="lazy">
+            <img src="img/equipe/rosto-giovani.jpg" alt="" width="310" height="388" loading="lazy">
+            <img src="img/equipe/rosto-gabriel.jpg" alt="" width="350" height="438" loading="lazy">
+          </span>
+          <h3>Bora para o próximo corte?</h3>
+          <p>Juninho, Giovani e Gabriel te esperam. Escolha o barbeiro e o horário direto pelo AppBarber.</p>
+        </div>
+        <div class="chamada-acoes">
+          <a class="botao botao-escuro" href="https://sites.appbarber.com.br/salzbarbershop-ovbx" target="_blank" rel="noopener">Agendar meu horário <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="botao botao-linha" href="https://wa.me/5516992088977?text=Ol%C3%A1%21%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Salz%20Barber%20Shop." target="_blank" rel="noopener">
+            <svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 8.3c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .5-.1.6l-.5.6c-.1.1-.1.3 0 .5.5.9 1.3 1.7 2.3 2.2.2.1.4.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.5.7c.2.1.3.3.3.5v.4c0 .4-.2.7-.5.9-.6.4-1.4.5-2.1.3-2.3-.7-4.1-2.5-4.8-4.8-.2-.7-.1-1.5.3-2.1z" fill="currentColor"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        <img class="chamada-logo" src="img/logo/salz-logo.png" alt="" width="200" height="200" loading="lazy">
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp-flutuante" href="https://wa.me/5516992088977?text=Ol%C3%A1%21%20Conheci%20a%20Salz%20Barber%20Shop%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg class="icone-whatsapp" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9.2 8.3c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .5-.1.6l-.5.6c-.1.1-.1.3 0 .5.5.9 1.3 1.7 2.3 2.2.2.1.4.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.5.7c.2.1.3.3.3.5v.4c0 .4-.2.7-.5.9-.6.4-1.4.5-2.1.3-2.3-.7-4.1-2.5-4.8-4.8-.2-.7-.1-1.5.3-2.1z" fill="currentColor"/></svg>
+  </a>
+
+  <footer class="rodape">
+    <div class="rodape-conteudo">
+      <div class="rodape-marca">
+        <a href="#inicio" class="marca">
+          <img src="img/logo/salz-logo.png" alt="" width="42" height="42">
+          <span class="marca-nome">Salz<small>Barber Shop</small></span>
+        </a>
+        <p class="rodape-frase">O tradicional, atualizado. A 1ª barbearia por assinatura de São Joaquim da Barra.</p>
+        <div class="rodape-redes">
+          <a href="https://wa.me/5516992088977" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"/><path d="M9.2 8.3c.2-.4.5-.5.8-.5h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .5-.1.6l-.5.6c-.1.1-.1.3 0 .5.5.9 1.3 1.7 2.3 2.2.2.1.4.1.5 0l.6-.6c.2-.2.4-.2.6-.1l1.5.7c.2.1.3.3.3.5v.4c0 .4-.2.7-.5.9-.6.4-1.4.5-2.1.3-2.3-.7-4.1-2.5-4.8-4.8-.2-.7-.1-1.5.3-2.1z" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.instagram.com/salzbarbershop/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+
+      <div class="rodape-coluna">
+        <h4>Navegue</h4>
+        <nav class="rodape-menu" aria-label="Rodapé">
+          <a href="#equipe">Equipe</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#espaco">Espaço</a>
+          <a href="#visite">Visite</a>
+        </nav>
+      </div>
+
+      <div class="rodape-coluna">
+        <h4>Endereço</h4>
+        <p>Rua São Paulo, 2235 - Lapa<br>São Joaquim da Barra - SP</p>
+        <p>Segunda a sábado</p>
+      </div>
+
+      <div class="rodape-coluna">
+        <h4>Agende</h4>
+        <p>Escolha o barbeiro e o horário pelo AppBarber.</p>
+        <a class="botao rota" href="https://sites.appbarber.com.br/salzbarbershop-ovbx" target="_blank" rel="noopener">Agendar <svg class="icone-seta" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+
+    <p class="rodape-gigante" aria-hidden="true">SALZ</p>
+    <div class="rodape-copy">
+      <span>© <span id="ano"></span> Salz Barber Shop. Todos os direitos reservados.</span>
+      <a href="#inicio">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
