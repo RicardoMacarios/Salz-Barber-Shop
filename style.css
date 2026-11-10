@@ -1014,21 +1014,37 @@ a:hover > .icone-seta { transform: translateX(3px); }
 
 /* ===== 03 Espaço: faixa de fotos passando sem parar, de ponta a ponta (como a galeria do Alves) ===== */
 .galeria {
+  position: relative;
   width: 100vw;
   margin-inline: calc(50% - 50vw);
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
+
+/* Bordas que somem no fundo. Antes era mask-image, mas no celular (principalmente iPhone)
+   a máscara junto com a faixa em movimento às vezes fazia as fotos sumirem e ficarem pretas */
+.galeria::before,
+.galeria::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: 8%;
+  z-index: 1;
+  pointer-events: none;
+}
+.galeria::before { left: 0; background: linear-gradient(to right, var(--fundo), transparent); }
+.galeria::after { right: 0; background: linear-gradient(to left, var(--fundo), transparent); }
 
 .galeria-trilho {
   display: flex;
   width: max-content;
   animation: passar 70s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 
 .galeria img {
+  background: var(--superficie);
   flex-shrink: 0;
   width: clamp(200px, 22vw, 290px);
   aspect-ratio: 3 / 4;
@@ -1681,6 +1697,7 @@ a:hover > .icone-seta { transform: translateX(3px); }
   html, .carrossel-trilho { scroll-behavior: auto; }
   .entrada { display: none; }
   .galeria, .depoimentos { overflow-x: auto; }
+  .galeria::before, .galeria::after { display: none; }
   .depoimentos-trilho { animation: none; }
   .menu, .menu.aberto > a, .menu.aberto .menu-rodape { animation: none; transition: none; }
   .servico, .galeria-trilho, .hero-texto > *, .hero h1 .linha > span, .hero-fundo img,

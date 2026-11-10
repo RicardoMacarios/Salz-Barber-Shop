@@ -9,6 +9,13 @@ const semMovimento = matchMedia("(prefers-reduced-motion: reduce)").matches;
 // Ano automático no rodapé
 document.getElementById("ano").textContent = new Date().getFullYear();
 
+// Fotos do espaço carregam todas de uma vez: com "lazy", no celular a foto só começava
+// a baixar quando já estava entrando na tela e aparecia um quadro preto até carregar
+document.querySelectorAll(".galeria img").forEach((foto) => {
+  foto.loading = "eager";
+  foto.decoding = "async";
+});
+
 // Faixas que passam sem parar: duplica os itens para a volta sem emenda
 // (a faixa de serviços e, quando chegarem as fotos dos cortes, a galeria)
 document.querySelectorAll(".faixa-trilho, .galeria-trilho, .depoimentos-trilho").forEach((trilho) => {

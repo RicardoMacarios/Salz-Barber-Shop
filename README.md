@@ -16,7 +16,6 @@ Site estático em HTML, CSS e JavaScript, feito a partir da base do site da Alve
 - `style.css`: visual (preto e verde-água da logo)
 - `script.js`: menu do celular, carrosséis, abas de serviços, aviso "Aberto agora" e animações
 - `img/`: logo, equipe, fotos do espaço e prévia de compartilhamento (`compartilhar.jpg`)
-- `originais/`: fotos em alta, fora do Git
 
 ## Para manter atualizado
 Procure `TROCAR` e `CONFIRMAR` no código. Preços, planos e horários vêm do AppBarber: se mudarem lá, precisam ser atualizados no `index.html` (e os horários também no `script.js`).
