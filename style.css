@@ -1198,7 +1198,7 @@ a:hover > .icone-seta { transform: translateX(3px); }
   display: flex;
   align-items: stretch;
   width: max-content;
-  animation: passar 140s linear infinite;
+  animation: passar 170s linear infinite;
 }
 
 .depoimento {
@@ -1213,13 +1213,12 @@ a:hover > .icone-seta { transform: translateX(3px); }
   border-radius: 16px;
 }
 
-/* As que têm comentário ganham um pouco mais de destaque */
-.depoimento.com-texto { width: 300px; border-color: rgba(4, 186, 179, 0.35); background: rgba(4, 186, 179, 0.08); }
+/* Comentários longos ganham um cartão mais largo e um pouco de destaque */
+.depoimento.longo { width: 340px; border-color: rgba(4, 186, 179, 0.35); background: rgba(4, 186, 179, 0.08); }
 
 .estrelas-peq { color: #FFC83D; letter-spacing: 0.08em; font-size: 0.95rem; }
 
 .depoimento blockquote { margin: 0; font-weight: 600; line-height: 1.45; color: var(--texto); }
-.depoimento .sem-texto { margin: 0; font-weight: 600; color: var(--texto); }
 
 .depoimento figcaption { margin-top: auto; font-size: 0.85rem; color: var(--texto-suave); }
 .depoimento figcaption strong { color: var(--destaque); font-weight: 700; }
