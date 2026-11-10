@@ -13,13 +13,17 @@
   <link rel="apple-touch-icon" href="img/logo/favicon-192.png">
 
   <!-- Prévia ao compartilhar o link (WhatsApp, Instagram, Facebook) -->
-  <!-- TROCAR: quando o site tiver endereço (ex.: Vercel), colocar canonical, og:url e og:image com o link completo -->
+  <!-- A imagem precisa do endereço completo; se o domínio do site mudar, atualizar canonical, og:url, og:image e os dados do Google -->
+  <link rel="canonical" href="https://salz-barber-shop.vercel.app/">
+  <meta property="og:url" content="https://salz-barber-shop.vercel.app/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Salz Barber Shop">
   <meta property="og:title" content="Salz Barber Shop | Seu estilo no padrão Salz">
   <meta property="og:description" content="A primeira barbearia por assinatura de São Joaquim da Barra - SP. Corte e barba com Juninho, Giovani e Gabriel.">
-  <meta property="og:image" content="img/compartilhar.jpg">
+  <meta property="og:image" content="https://salz-barber-shop.vercel.app/img/compartilhar.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Juninho, Giovani e Gabriel, barbeiros da Salz Barber Shop">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
@@ -40,15 +44,15 @@
   </script>
 
   <!-- Dados da barbearia para o Google (endereço, horários, telefone e nota) -->
-  <!-- TROCAR: quando o site tiver endereço, colocar "url" e o link completo em "image" e "logo" -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BarberShop",
     "name": "Salz Barber Shop",
+    "url": "https://salz-barber-shop.vercel.app/",
     "description": "A primeira barbearia por assinatura de São Joaquim da Barra - SP. Corte, barba e loja de roupas masculinas com produtos originais da NBA.",
-    "image": "img/equipe/equipe-salz.jpg",
-    "logo": "img/logo/salz-logo.png",
+    "image": "https://salz-barber-shop.vercel.app/img/equipe/equipe-salz.jpg",
+    "logo": "https://salz-barber-shop.vercel.app/img/logo/salz-logo.png",
     "telephone": "+55 16 99208-8977",
     "priceRange": "R$ 10 - R$ 100",
     "address": {
